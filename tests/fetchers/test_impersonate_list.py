@@ -3,9 +3,9 @@ import pytest
 import pytest_httpbin
 from unittest.mock import patch, MagicMock
 
-from scrapling import Fetcher
-from scrapling.fetchers import FetcherSession
-from scrapling.engines.static import _select_random_browser
+from cybrscrape import Fetcher
+from cybrscrape.fetchers import FetcherSession
+from cybrscrape.engines.static import _select_random_browser
 
 
 class TestRandomBrowserSelection:

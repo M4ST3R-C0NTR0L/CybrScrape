@@ -1,6 +1,6 @@
 import pytest
 
-from scrapling.core.shell import (
+from cybrscrape.core.shell import (
     _CookieParser,
     _ParseHeaders,
     Request,

@@ -2,7 +2,7 @@ import re
 import pytest
 import pytest_httpbin
 
-from scrapling.engines._browsers._stealth import StealthySession, __CF_PATTERN__
+from cybrscrape.engines._browsers._stealth import StealthySession, __CF_PATTERN__
 
 
 class TestStealthConstants:

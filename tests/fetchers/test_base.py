@@ -1,6 +1,6 @@
 import pytest
 
-from scrapling.engines.toolbelt.custom import BaseFetcher
+from cybrscrape.engines.toolbelt.custom import BaseFetcher
 
 
 class TestBaseFetcher:

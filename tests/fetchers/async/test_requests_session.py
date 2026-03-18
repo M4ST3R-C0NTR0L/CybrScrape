@@ -1,6 +1,6 @@
 
 
-from scrapling.engines.static import AsyncFetcherClient
+from cybrscrape.engines.static import AsyncFetcherClient
 
 
 class TestFetcherSession:

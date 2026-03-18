@@ -1,9 +1,9 @@
 """Tests for the SessionManager class."""
 
-from scrapling.core._types import Any
+from cybrscrape.core._types import Any
 import pytest
 
-from scrapling.spiders.session import SessionManager
+from cybrscrape.spiders.session import SessionManager
 
 
 class MockSession:  # type: ignore[type-arg]

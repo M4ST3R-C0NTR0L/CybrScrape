@@ -2,9 +2,9 @@
 
 import pytest
 
-from scrapling.spiders.request import Request
-from scrapling.spiders.scheduler import Scheduler
-from scrapling.spiders.checkpoint import CheckpointData
+from cybrscrape.spiders.request import Request
+from cybrscrape.spiders.scheduler import Scheduler
+from cybrscrape.spiders.checkpoint import CheckpointData
 
 
 class TestSchedulerInit:

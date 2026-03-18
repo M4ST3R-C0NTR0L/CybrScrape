@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import Mock
-from scrapling.engines._browsers._page import PageInfo, PagePool
+from cybrscrape.engines._browsers._page import PageInfo, PagePool
 
 
 class TestPageInfo:

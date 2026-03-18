@@ -1,7 +1,7 @@
 from unittest.mock import Mock
 
-from scrapling.parser import Selector
-from scrapling.engines.toolbelt.convertor import ResponseFactory, Response
+from cybrscrape.parser import Selector
+from cybrscrape.engines.toolbelt.convertor import ResponseFactory, Response
 
 
 class TestResponseFactory:

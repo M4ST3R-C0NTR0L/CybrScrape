@@ -12,7 +12,7 @@ from parsel import Selector
 from pyquery import PyQuery as pq
 from selectolax.parser import HTMLParser
 
-from scrapling import Selector as ScraplingSelector
+from cybrscrape import Selector as ScraplingSelector
 
 large_html = (
     "<html><body>" + '<div class="item">' * 5000 + "</div>" * 5000 + "</body></html>"
@@ -71,7 +71,7 @@ def test_pyquery():
 
 
 @benchmark
-def test_scrapling():
+def test_cybrscrape():
     # No need to do `.extract()` like parsel to extract text
     # Also, this is faster than `[t.text for t in Selector(large_html, adaptive=False).css('.item')]`
     # for obvious reasons, of course.
@@ -98,17 +98,17 @@ def test_selectolax():
 def display(results):
     # Sort and display results
     sorted_results = sorted(results.items(), key=lambda x: x[1])  # Sort by time
-    scrapling_time = results["Scrapling"]
+    cybrscrape_time = results["CybrScrape"]
     print("\nRanked Results (fastest to slowest):")
     print(f" i. {'Library tested':<18} | {'avg. time (ms)':<15} | vs Scrapling")
     print("-" * 50)
     for i, (test_name, test_time) in enumerate(sorted_results, 1):
-        compare = round(test_time / scrapling_time, 3)
+        compare = round(test_time / cybrscrape_time, 3)
         print(f" {i}. {test_name:<18} | {str(test_time):<15} | {compare}")
 
 
 @benchmark
-def test_scrapling_text(request_html):
+def test_cybrscrape_text(request_html):
     return ScraplingSelector(request_html, adaptive=False).find_by_text("Tipping the Velvet", first_match=True, clean_match=False).find_similar(ignore_attributes=["title"])
 
 
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     results1 = {
         "Raw Lxml": test_lxml(),
         "Parsel/Scrapy": test_parsel(),
-        "Scrapling": test_scrapling(),
+        "CybrScrape": test_cybrscrape(),
         "Selectolax": test_selectolax(),
         "PyQuery": test_pyquery(),
         "BS4 with Lxml": test_bs4_lxml(),
@@ -140,7 +140,7 @@ if __name__ == "__main__":
         " Benchmark: Speed of searching for an element by text content, and retrieving the text of similar elements\n"
     )
     results2 = {
-        "Scrapling": test_scrapling_text(req.text),
+        "CybrScrape": test_cybrscrape_text(req.text),
         "AutoScraper": test_autoscraper(req.text),
     }
     display(results2)

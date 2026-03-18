@@ -1,8 +1,8 @@
 import pytest
 from unittest.mock import patch, MagicMock
 
-from scrapling.parser import Selector
-from scrapling.core.shell import CustomShell, CurlParser, Convertor
+from cybrscrape.parser import Selector
+from cybrscrape.core.shell import CustomShell, CurlParser, Convertor
 
 
 class TestCurlParser:
@@ -69,7 +69,7 @@ class TestCurlParser:
 
     def test_curl2fetcher(self, parser):
         """Test converting curl to fetcher request"""
-        with patch('scrapling.fetchers.Fetcher.get') as mock_get:
+        with patch('cybrscrape.fetchers.Fetcher.get') as mock_get:
             mock_response = MagicMock()
             mock_get.return_value = mock_response
 

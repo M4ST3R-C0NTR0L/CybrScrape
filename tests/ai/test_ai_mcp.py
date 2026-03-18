@@ -1,7 +1,7 @@
 import pytest
 import pytest_httpbin
 
-from scrapling.core.ai import ScraplingMCPServer, ResponseModel
+from cybrscrape.core.ai import ScraplingMCPServer, ResponseModel
 
 
 @pytest_httpbin.use_class_based_httpbin

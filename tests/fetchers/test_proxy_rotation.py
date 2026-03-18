@@ -3,7 +3,7 @@ import random
 from threading import Thread
 from concurrent.futures import ThreadPoolExecutor
 
-from scrapling.engines.toolbelt import ProxyRotator, is_proxy_error, cyclic_rotation
+from cybrscrape.engines.toolbelt import ProxyRotator, is_proxy_error, cyclic_rotation
 
 
 class TestCyclicRotationStrategy:

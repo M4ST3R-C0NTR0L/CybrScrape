@@ -4,8 +4,8 @@ import pickle
 
 import pytest
 
-from scrapling.spiders.request import Request
-from scrapling.core._types import Any, Dict, AsyncGenerator
+from cybrscrape.spiders.request import Request
+from cybrscrape.core._types import Any, Dict, AsyncGenerator
 
 
 class TestRequestCreation:

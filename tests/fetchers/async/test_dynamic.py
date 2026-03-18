@@ -1,7 +1,7 @@
 import pytest
 import pytest_httpbin
 
-from scrapling import DynamicFetcher
+from cybrscrape import DynamicFetcher
 
 DynamicFetcher.adaptive = True
 

@@ -3,17 +3,17 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "scrapling"
+name = "cybrscrape"
 # Static version instead of a dynamic version so we can get better layer caching while building docker, check the docker file to understand
 version = "0.4.2"
-description = "Scrapling is an undetectable, powerful, flexible, high-performance Python library that makes Web Scraping easy and effortless as it should be!"
+description = "Adaptive Web Scraping Framework by Cybrflux"
 readme = {file = "README.md", content-type = "text/markdown"}
 license = {file = "LICENSE"}
 authors = [
-    {name = "Karim Shoair", email = "karim.shoair@pm.me"}
+    {name = "Cybrflux"}
 ]
 maintainers = [
-    {name = "Karim Shoair", email = "karim.shoair@pm.me"}
+    {name = "Cybrflux"}
 ]
 keywords = [
     "web-scraping",
@@ -88,23 +88,22 @@ ai = [
 shell = [
     "IPython>=8.37",  # The last version that supports Python 3.10
     "markdownify>=1.2.0",
-    "scrapling[fetchers]",
+    "cybrscrape[fetchers]",
 ]
 all = [
-    "scrapling[ai,shell]",
+    "cybrscrape[ai,shell]",
 ]
 
 [project.urls]
-Homepage = "https://github.com/D4Vinci/Scrapling"
-Changelog = "https://github.com/D4Vinci/Scrapling/releases"
-Documentation = "https://scrapling.readthedocs.io/en/latest/"
-Repository = "https://github.com/D4Vinci/Scrapling"
-"Bug Tracker" = "https://github.com/D4Vinci/Scrapling/issues"
-"Discord" = "https://discord.gg/EMgGbDceNQ"
-"Release Notes" = "https://github.com/D4Vinci/Scrapling/releases"
+Homepage = "https://github.com/M4ST3R-C0NTR0L/CybrScrape"
+Changelog = "https://github.com/M4ST3R-C0NTR0L/CybrScrape/releases"
+Documentation = "https://cybrscrape.readthedocs.io/en/latest/"
+Repository = "https://github.com/M4ST3R-C0NTR0L/CybrScrape"
+"Bug Tracker" = "https://github.com/M4ST3R-C0NTR0L/CybrScrape/issues"
+"Release Notes" = "https://github.com/M4ST3R-C0NTR0L/CybrScrape/releases"
 
 [project.scripts]
-scrapling = "scrapling.cli:main"
+cybrscrape = "cybrscrape.cli:main"
 
 [tool.setuptools]
 zip-safe = false
@@ -112,7 +111,7 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["scrapling*"]
+include = ["cybrscrape*"]
 
 [tool.mypy]
 python_version = "3.10"
@@ -123,5 +122,5 @@ check_untyped_defs = true
 [tool.pyright]
 pythonVersion = "3.10"
 typeCheckingMode = "basic"
-include = ["scrapling"]
+include = ["cybrscrape"]
 ignore = ["tests", "benchmarks.py"]

@@ -6,12 +6,12 @@ from pathlib import Path
 import anyio
 import pytest
 
-from scrapling.spiders.engine import CrawlerEngine, _dump
-from scrapling.spiders.request import Request
-from scrapling.spiders.session import SessionManager
-from scrapling.spiders.result import CrawlStats, ItemList
-from scrapling.spiders.checkpoint import CheckpointData
-from scrapling.core._types import Any, Dict, Set, AsyncGenerator
+from cybrscrape.spiders.engine import CrawlerEngine, _dump
+from cybrscrape.spiders.request import Request
+from cybrscrape.spiders.session import SessionManager
+from cybrscrape.spiders.result import CrawlStats, ItemList
+from cybrscrape.spiders.checkpoint import CheckpointData
+from cybrscrape.core._types import Any, Dict, Set, AsyncGenerator
 
 
 # ---------------------------------------------------------------------------

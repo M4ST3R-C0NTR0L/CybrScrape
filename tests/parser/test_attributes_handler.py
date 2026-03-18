@@ -1,8 +1,8 @@
 import pytest
 import json
 
-from scrapling import Selector
-from scrapling.core.custom_types import AttributesHandler
+from cybrscrape import Selector
+from cybrscrape.core.custom_types import AttributesHandler
 
 
 class TestAttributesHandler:

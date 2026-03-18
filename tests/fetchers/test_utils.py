@@ -1,12 +1,12 @@
 import pytest
 
-from scrapling.engines.toolbelt.custom import StatusText, Response
-from scrapling.engines.toolbelt.navigation import (
+from cybrscrape.engines.toolbelt.custom import StatusText, Response
+from cybrscrape.engines.toolbelt.navigation import (
     construct_proxy_dict,
     create_intercept_handler,
     create_async_intercept_handler,
 )
-from scrapling.engines.toolbelt.fingerprints import (
+from cybrscrape.engines.toolbelt.fingerprints import (
     get_os_name,
     generate_headers
 )

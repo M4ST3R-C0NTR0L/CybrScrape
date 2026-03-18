@@ -2,9 +2,9 @@ import re
 import pytest
 from unittest.mock import Mock
 
-from scrapling import Selector, Selectors
-from scrapling.core.custom_types import TextHandler, TextHandlers
-from scrapling.core.storage import SQLiteStorageSystem
+from cybrscrape import Selector, Selectors
+from cybrscrape.core.custom_types import TextHandler, TextHandlers
+from cybrscrape.core.storage import SQLiteStorageSystem
 
 
 class TestSelectorAdvancedFeatures:

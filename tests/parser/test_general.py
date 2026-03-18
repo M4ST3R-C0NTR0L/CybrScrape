@@ -5,8 +5,8 @@ import logging
 import pytest
 from cssselect import SelectorError, SelectorSyntaxError
 
-from scrapling import Selector
-logging.getLogger("scrapling").setLevel(logging.DEBUG)
+from cybrscrape import Selector
+logging.getLogger("cybrscrape").setLevel(logging.DEBUG)
 
 
 @pytest.fixture

@@ -3,8 +3,8 @@ from click.testing import CliRunner
 from unittest.mock import patch, MagicMock
 import pytest_httpbin
 
-from scrapling.parser import Selector
-from scrapling.cli import (
+from cybrscrape.parser import Selector
+from cybrscrape.cli import (
     shell, mcp, get, post, put, delete, fetch, stealthy_fetch
 )
 
@@ -34,7 +34,7 @@ class TestCLI:
 
     def test_shell_command(self, runner):
         """Test shell command"""
-        with patch('scrapling.core.shell.CustomShell') as mock_shell:
+        with patch('cybrscrape.core.shell.CustomShell') as mock_shell:
             mock_instance = MagicMock()
             mock_shell.return_value = mock_instance
 
@@ -44,7 +44,7 @@ class TestCLI:
 
     def test_mcp_command(self, runner):
         """Test MCP command"""
-        with patch('scrapling.core.ai.ScraplingMCPServer') as mock_server:
+        with patch('cybrscrape.core.ai.ScraplingMCPServer') as mock_server:
             mock_instance = MagicMock()
             mock_server.return_value = mock_instance
 
@@ -56,7 +56,7 @@ class TestCLI:
         """Test extract `get` command"""
         output_file = tmp_path / "output.md"
 
-        with patch('scrapling.fetchers.Fetcher.get') as mock_get:
+        with patch('cybrscrape.fetchers.Fetcher.get') as mock_get:
             mock_response = configure_selector_mock()
             mock_response.status = 200
             mock_get.return_value = mock_response
@@ -68,7 +68,7 @@ class TestCLI:
             assert result.exit_code == 0
 
         # Test with various options
-        with patch('scrapling.fetchers.Fetcher.get') as mock_get:
+        with patch('cybrscrape.fetchers.Fetcher.get') as mock_get:
             mock_get.return_value = mock_response
 
             result = runner.invoke(
@@ -90,7 +90,7 @@ class TestCLI:
         """Test extract `post` command"""
         output_file = tmp_path / "output.html"
 
-        with patch('scrapling.fetchers.Fetcher.post') as mock_post:
+        with patch('cybrscrape.fetchers.Fetcher.post') as mock_post:
             mock_response = configure_selector_mock()
             mock_post.return_value = mock_response
 
@@ -109,7 +109,7 @@ class TestCLI:
         """Test extract `put` command"""
         output_file = tmp_path / "output.html"
 
-        with patch('scrapling.fetchers.Fetcher.put') as mock_put:
+        with patch('cybrscrape.fetchers.Fetcher.put') as mock_put:
             mock_response = configure_selector_mock()
             mock_put.return_value = mock_response
 
@@ -128,7 +128,7 @@ class TestCLI:
         """Test extract `delete` command"""
         output_file = tmp_path / "output.html"
 
-        with patch('scrapling.fetchers.Fetcher.delete') as mock_delete:
+        with patch('cybrscrape.fetchers.Fetcher.delete') as mock_delete:
             mock_response = configure_selector_mock()
             mock_delete.return_value = mock_response
 
@@ -145,7 +145,7 @@ class TestCLI:
         """Test extract fetch command"""
         output_file = tmp_path / "output.txt"
 
-        with patch('scrapling.fetchers.DynamicFetcher.fetch') as mock_fetch:
+        with patch('cybrscrape.fetchers.DynamicFetcher.fetch') as mock_fetch:
             mock_response = configure_selector_mock()
             mock_fetch.return_value = mock_response
 
@@ -164,7 +164,7 @@ class TestCLI:
         """Test extract fetch command"""
         output_file = tmp_path / "output.md"
 
-        with patch('scrapling.fetchers.StealthyFetcher.fetch') as mock_fetch:
+        with patch('cybrscrape.fetchers.StealthyFetcher.fetch') as mock_fetch:
             mock_response = configure_selector_mock()
             mock_fetch.return_value = mock_response
 
@@ -196,7 +196,7 @@ class TestCLI:
         """Test that comma-separated impersonate values are parsed correctly"""
         output_file = tmp_path / "output.md"
 
-        with patch('scrapling.fetchers.Fetcher.get') as mock_get:
+        with patch('cybrscrape.fetchers.Fetcher.get') as mock_get:
             mock_response = configure_selector_mock()
             mock_response.status = 200
             mock_get.return_value = mock_response
@@ -220,7 +220,7 @@ class TestCLI:
         """Test that single impersonate value remains as string"""
         output_file = tmp_path / "output.md"
 
-        with patch('scrapling.fetchers.Fetcher.get') as mock_get:
+        with patch('cybrscrape.fetchers.Fetcher.get') as mock_get:
             mock_response = configure_selector_mock()
             mock_response.status = 200
             mock_get.return_value = mock_response

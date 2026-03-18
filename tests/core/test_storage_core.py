@@ -1,7 +1,7 @@
 import tempfile
 import os
 
-from scrapling.core.storage import SQLiteStorageSystem
+from cybrscrape.core.storage import SQLiteStorageSystem
 
 
 class TestSQLiteStorageSystem:

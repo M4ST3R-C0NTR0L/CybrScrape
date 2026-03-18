@@ -1,5 +1,5 @@
 import pytest
-from scrapling.engines._browsers._validators import (
+from cybrscrape.engines._browsers._validators import (
     validate,
     StealthConfig,
     PlaywrightConfig,

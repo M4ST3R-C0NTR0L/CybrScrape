@@ -7,8 +7,8 @@ from pathlib import Path
 import pytest
 import anyio
 
-from scrapling.spiders.request import Request
-from scrapling.spiders.checkpoint import CheckpointData, CheckpointManager
+from cybrscrape.spiders.request import Request
+from cybrscrape.spiders.checkpoint import CheckpointData, CheckpointManager
 
 
 class TestCheckpointData:

@@ -1,7 +1,7 @@
 import pytest
 import pytest_httpbin
 
-from scrapling.fetchers import AsyncFetcher
+from cybrscrape.fetchers import AsyncFetcher
 
 AsyncFetcher.adaptive = True
 

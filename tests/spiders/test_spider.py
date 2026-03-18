@@ -6,11 +6,11 @@ from pathlib import Path
 
 import pytest
 
-from scrapling.spiders.spider import Spider, SessionConfigurationError, LogCounterHandler, BLOCKED_CODES
-from scrapling.spiders.request import Request
-from scrapling.spiders.session import SessionManager
-from scrapling.spiders.result import CrawlStats
-from scrapling.core._types import Any, Dict, AsyncGenerator
+from cybrscrape.spiders.spider import Spider, SessionConfigurationError, LogCounterHandler, BLOCKED_CODES
+from cybrscrape.spiders.request import Request
+from cybrscrape.spiders.session import SessionManager
+from cybrscrape.spiders.result import CrawlStats
+from cybrscrape.core._types import Any, Dict, AsyncGenerator
 
 
 class TestLogCounterHandler:
@@ -200,7 +200,7 @@ class TestSpiderInit:
         spider = ConcreteSpider()
 
         assert spider.logger is not None
-        assert spider.logger.name == "scrapling.spiders.test_spider"
+        assert spider.logger.name == "cybrscrape.spiders.test_spider"
 
     def test_spider_logger_has_log_counter(self):
         """Test that spider logger has log counter handler."""

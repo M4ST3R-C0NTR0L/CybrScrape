@@ -1,4 +1,4 @@
-from scrapling.engines.constants import EXTRA_RESOURCES, STEALTH_ARGS, HARMFUL_ARGS, DEFAULT_ARGS
+from cybrscrape.engines.constants import EXTRA_RESOURCES, STEALTH_ARGS, HARMFUL_ARGS, DEFAULT_ARGS
 
 
 class TestConstants:

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from scrapling.spiders.result import ItemList, CrawlStats, CrawlResult
+from cybrscrape.spiders.result import ItemList, CrawlStats, CrawlResult
 
 
 class TestItemList:

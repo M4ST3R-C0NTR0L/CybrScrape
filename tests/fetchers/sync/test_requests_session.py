@@ -1,7 +1,7 @@
 import pytest
 
 
-from scrapling.engines.static import _SyncSessionLogic as FetcherSession, FetcherClient
+from cybrscrape.engines.static import _SyncSessionLogic as FetcherSession, FetcherClient
 
 
 class TestFetcherSession:
