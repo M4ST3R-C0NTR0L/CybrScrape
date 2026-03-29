@@ -79,7 +79,10 @@ class _ConfigurationLogic(ABC):
         self._default_retry_delay = kwargs.get("retry_delay", 1)
         self._default_follow_redirects = kwargs.get("follow_redirects", True)
         self._default_max_redirects = kwargs.get("max_redirects", 30)
-        self._default_verify = kwargs.get("verify", True)
+        # Default verify=False on macOS due to curl_cffi 0.14 BoringSSL cert chain bug
+        import sys as _sys
+        _default_verify = False if _sys.platform == "darwin" else True
+        self._default_verify = kwargs.get("verify", _default_verify)
         self._default_cert = kwargs.get("cert") or None
         self._default_http3 = kwargs.get("http3", False)
         self.selector_config = kwargs.get("selector_config") or {}
@@ -699,6 +702,10 @@ class FetcherSession:
         self._default_retry_delay = retry_delay
         self._default_follow_redirects = follow_redirects
         self._default_max_redirects = max_redirects
+        # Default verify=False on macOS due to curl_cffi 0.14 BoringSSL cert chain bug
+        import sys as _sys
+        if _sys.platform == "darwin" and verify is True:
+            verify = False
         self._default_verify = verify
         self._default_cert = cert
         self._default_http3 = http3
